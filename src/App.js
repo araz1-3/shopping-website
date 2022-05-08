@@ -1,4 +1,4 @@
-import {Route,Switch,Redirect} from 'react-router-dom'
+import {Route ,Routes,Navigate} from 'react-router-dom'
 
 import Store from "./component/Store";
 import ProductDetails from "./component/ProductDetails";
@@ -16,6 +16,7 @@ import Footer from "./component/footer";
 import About from "./component/about/about";
 import Contact from "./component/contact/contact";
 import Favorites from "./component/favorites";
+import NotFound from "./component/notFound";
 
 
 function App() {
@@ -24,16 +25,17 @@ function App() {
         <CartContextProvider>
             <FavoriteContextProvider>
             <Navbar/>
-            <Switch>
-                <Route path="/products/:id" component={ProductDetails}/>
-                <Route path="/products" component={Store}/>
-                <Route path="/cart" component={ShopCart}/>
-                <Route path="/favorites" component={Favorites}/>
-                <Route path="/about" component={About}/>
-                <Route path="/contact" component={Contact}/>
-                <Route path="/" component={Home}/>
-                <Redirect to="/products"/>
-            </Switch>
+            <Routes>
+                <Route path="/products/:id" element={<ProductDetails/>}/>
+                <Route path="/products" element={<Store/>}/>
+                <Route path="/cart" element={<ShopCart/>}/>
+                <Route path="/favorites" element={<Favorites/>}/>
+                <Route path="/about" element={<About/>}/>
+                <Route path="/contact" element={<Contact/>}/>
+                <Route path="/notfound" element={<NotFound/>}/>
+                <Route path="/*" element={<Navigate to="/notfound"/>}/>
+                <Route path="/" element={<Home/>}/>
+            </Routes>
             <Footer/>
             </FavoriteContextProvider>
         </CartContextProvider>

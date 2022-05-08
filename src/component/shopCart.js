@@ -11,7 +11,7 @@ const  ShopCart = () => {
     const {state,dispatch} = useContext(CartContext)
 
     return (
-        <div className="flex container flex-col-reverse items-center lg:flex-row lg:justify-between items-start mt-[150px]  mb-[50px] transition-all ease-in duration-200">
+        <div className="min-h-[40vh] flex container flex-col-reverse items-center lg:flex-row lg:justify-between items-start mt-[150px]  mb-[50px] transition-all ease-in duration-200">
             <div className="lg:w-[70%] w-full">
                 {state.selectItems.map(item => <Cart key={item.id} data={item} />)}
             </div>

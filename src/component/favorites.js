@@ -9,7 +9,7 @@ const Favorites = () => {
     const {FavState} =useContext(FavoriteContext)
 
     return (
-        <div className="h-[50vh]">
+        <div className="min-h-[50vh] container">
             {
                 FavState.favoriteItems.length?
                 <div className="mt-150px flex flex-wrap justify-between items-center px-[150px]">

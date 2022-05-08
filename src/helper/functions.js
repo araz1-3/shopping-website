@@ -1,12 +1,11 @@
 const shorten =(title)=>{
     const splitTitle = title.split(" ")
-    const newTitle = `${splitTitle[0]} ${splitTitle[1]}`
-    return newTitle
+    return `${splitTitle[0]} ${splitTitle[1]}`
 }
 
 const isInCart =(state,id)=>{
-    const result = !!state.selectItems.find(item=> item.id === id)
-    return result
+     return  !!state.selectItems.find(item=> item.id === id)
+
 }
 
 const quantityCount =(state,id)=>{
@@ -19,8 +18,8 @@ const quantityCount =(state,id)=>{
 }
 
 const FavIsSelected =(state,id)=>{
-    const Isin = !!state.favoriteItems.find(item=> item.id === id)
-    return Isin
+    return !!state.favoriteItems.find(item=> item.id === id)
+
 }
 
 export {shorten,isInCart,quantityCount,FavIsSelected}
