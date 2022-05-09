@@ -11,7 +11,7 @@ const  ShopCart = () => {
     const {state,dispatch} = useContext(CartContext)
 
     return (
-        <div className="min-h-[40vh] flex container flex-col-reverse items-center lg:flex-row lg:justify-between items-start mt-[150px]  mb-[50px] transition-all ease-in duration-200">
+        <div className="min-h-[40vh] flex container flex-col-reverse items-start lg:flex-row lg:justify-between items-start mt-[150px]  mb-[50px] transition-all ease-in duration-200">
             <div className="lg:w-[70%] w-full">
                 {state.selectItems.map(item => <Cart key={item.id} data={item} />)}
             </div>
@@ -26,15 +26,15 @@ const  ShopCart = () => {
                 </div>
             }
             {
-                state.checkout && <div className="text-[#167d32] mt-[30px] mb-[50px] text-[1.1rem]">
-                    <h3>Checked out Successfully</h3>
-                    <Link className="inline-block bg-[#1a73e8] leading-[30px] shadow-newShadow ml-[5px] text-center w-[120px] hover:bg-[#08499d] text-[#fff] cursor-pointer h-[30px] font-bold rounded-[4px] transition-all ease-in duration-200" to="/products">Buy More</Link>
+                state.checkout && <div className="flex gap-5 flex-col justify-center items-center mb-[100px]">
+                    <h3 className="text-xl font-bold">Checked out Successfully</h3>
+                    <Link className="pt-[2px] bg-[#1a73e8] leading-[30px] shadow-newShadow  text-center w-32 hover:bg-[#08499d] text-white cursor-pointer h-9 font-bold rounded-lg transition-all ease-in duration-100" to="/products">Buy More</Link>
                 </div>
             }
             {
-                !state.checkout && state.itemsCenter === 0 &&<div className="text-[#167d32] mt-[30px] mb-[50px] text-[1.1rem]">
-                    <h3>Want to Buy?</h3>
-                    <Link className="inline-block bg-[#1a73e8] leading-[30px] shadow-newShadow ml-[5px] text-center w-[120px] hover:bg-[#08499d] text-[#fff] cursor-pointer h-[30px] font-bold rounded-[4px] transition-all ease-in duration-200" to="/products">Back to Shop </Link>
+                !state.checkout && state.itemsCenter === 0 &&<div className="flex gap-5 flex-col justify-center items-center mb-[100px]">
+                    <h3 className="text-xl font-bold">Want to Buy?</h3>
+                    <Link className="pt-[2px] bg-[#1a73e8] leading-[30px] shadow-newShadow  text-center w-32 hover:bg-[#08499d] text-white cursor-pointer h-9 font-bold rounded-lg transition-all ease-in duration-100" to="/products">Back to Shop </Link>
                 </div>
             }
         </div>

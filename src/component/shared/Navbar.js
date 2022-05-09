@@ -33,7 +33,7 @@ const Navbar = () => {
             :"bg-transparent transition-all ease-in delay-600 mb-[100px] w-full h-[70px] fixed top-0 z-10 "}
         >
 
-            <div className="container flex justify-between h-[60px] py-[20px] px-[180px]">
+            <div className="container flex justify-between h-[60px] py-[20px] ">
                 <div className="flex gap-10 ">
                     <NavList name="Home" path='/'/>
                     <NavList name="Products" path='/products'/>
