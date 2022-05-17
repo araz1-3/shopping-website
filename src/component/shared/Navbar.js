@@ -35,14 +35,22 @@ const Navbar = () => {
 
 
     return (
-        <nav className={navbar ? "bg-gray-900 mb-[100px] w-full h-[70px] fixed top-0 z-10 shadow-2xl"
-            :"bg-transparent transition-all ease-in delay-600 mb-[100px] w-full h-[70px] fixed top-0 z-10 "}
+        <nav className={navbar
+            ? "bg-gray-900 mb-[100px] w-full h-[70px] fixed top-0 z-10 shadow-2xl"
+            : "bg-transparent transition-all ease-in delay-600 mb-[100px] w-full h-[70px] fixed top-0 z-10 "}
         >
             <div className="container py-4 flex justify-between h-[60px] ">
 
-                <div className={isShown?"hidden":" fixed cursor-pointer z-50 md:hidden"} onClick={showHandler}>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-9 w-9" fill="none" viewBox="0 0 24 24" stroke={navbar?"white":"black"} strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                <div className={isShown
+                    ? "hidden"
+                    : " fixed cursor-pointer z-50 md:hidden"
+                }
+                     onClick={showHandler}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-9 w-9" fill="none" viewBox="0 0 24 24"
+                         stroke={navbar?"white":"black"}
+                         strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </div>
 
@@ -61,7 +69,11 @@ const Navbar = () => {
 
                     <NavUl isShown={isShown} />
                 </div>
-               <div className={isShown?"fixed top-4 right-2  transition-all ease-linear duration-300 flex gap-8":"flex fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-8"}>
+               <div className={isShown
+                   ? "fixed top-4 right-2  transition-all ease-linear duration-300 flex gap-8"
+                   : "flex fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-8"
+               }
+               >
                    <NavIcon state={FavState.favoriteCounter} path="/favorites" navbar={navbar} />
                    <NavIcon state={state.itemsCenter} path="/cart" navbar={navbar} />
                </div>

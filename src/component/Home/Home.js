@@ -54,9 +54,17 @@ const Home = () => {
                      </div>
                   </div>
               </div>
-           <button onClick={scrollTOHandler}  className={scroll ? "transition-all hidden md:block duration-200 ease-in fixed z-50 bottom-20 pb-2 right-20 w-20 h-20 text-5xl font-bold text-white rounded-[50%] bg-[#1a73e8] hover:bg-[#0b499b]":"hidden"}>&uarr;</button>
+
+           <button onClick={scrollTOHandler} className={scroll
+               ? "transition-all hidden md:block duration-200 ease-in fixed z-50 bottom-20 pb-2 right-20 w-20 h-20 text-5xl font-bold text-white rounded-[50%] bg-[#1a73e8] hover:bg-[#0b499b]"
+               :"hidden"}
+           >
+               &uarr;
+           </button>
+
            <Logos/>
            <Banners/>
+
            <h1 className="text-center my-16 text-5xl">Featured Products</h1>
            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-12 auto-rows-auto container md:8/12 lg:w-7/12 grid-cols-1 auto-cols-max relative">
                <div className="font-bold underline hover:text-blue-600 text-xl absolute top-[-50px] md:right-[80px] right-[40px]">
