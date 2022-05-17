@@ -37,9 +37,9 @@ const Product = ({productData}) => {
                     {quantityCount(state,productData.id) === 1 && <button className="w-[30px] pl-1 hover:bg-red-700 text-[1.6rem] font-bold leading-[30px] transition-all duration-200 ease-in h-[30px] bg-red-600  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"   onClick={()=>dispatch({type:"REMOVE_ITEM",payload:productData})}><img alt="trash" src={Trash} className="w-[20px] text-center"/></button>}
                     {quantityCount(state,productData.id) > 0 && <span className="inline-block pt-2 w-[20px] font-bold ml-[5px] text-[1.2rem] text-[#1a73e8]">{quantityCount(state,productData.id)}</span>}
                     {
-                        isInCart(state,productData.id)?
-                            <button className="w-[30px] text-[1.6rem] hover:bg-[#0b499b] font-bold leading-[30px] transition-all duration-200 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"  onClick={()=>dispatch({type:"INCREASE",payload:productData})}>+</button> :
-                            <button className="w-[120px] text-[0.9rem] hover:bg-[#0b499b] transition-all duration-200 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow" onClick={()=>dispatch({type:"ADD_ITEM",payload:productData})}>Add to Cart</button>
+                        isInCart(state,productData.id)
+                            ? <button className="w-[30px] text-[1.6rem] hover:bg-[#0b499b] font-bold leading-[30px] transition-all duration-200 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"  onClick={()=>dispatch({type:"INCREASE",payload:productData})}>+</button>
+                            : <button className="w-[120px] text-[0.9rem] hover:bg-[#0b499b] transition-all duration-200 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow" onClick={()=>dispatch({type:"ADD_ITEM",payload:productData})}>Add to Cart</button>
                     }
                 </div>
             </div>

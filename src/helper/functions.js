@@ -5,7 +5,6 @@ const shorten =(title)=>{
 
 const isInCart =(state,id)=>{
      return  !!state.selectItems.find(item=> item.id === id)
-
 }
 
 const quantityCount =(state,id)=>{
@@ -19,7 +18,6 @@ const quantityCount =(state,id)=>{
 
 const FavIsSelected =(state,id)=>{
     return !!state.favoriteItems.find(item=> item.id === id)
-
 }
 
 export {shorten,isInCart,quantityCount,FavIsSelected}
