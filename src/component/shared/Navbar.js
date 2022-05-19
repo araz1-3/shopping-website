@@ -61,7 +61,7 @@ const Navbar = () => {
                         : "flex transition-all ease-linear duration-300 md:translate-x-0 translate-x-[-200%] gap-10"
                 }
                 >
-                    <div className={isShown?"absolute top-3 right-5 cursor-pointer":"hidden"} onClick={showHandler}>
+                    <div className={isShown?"absolute top-3 right-5 transition-all ease-linear duration-300 cursor-pointer":"hidden"} onClick={showHandler}>
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -70,7 +70,7 @@ const Navbar = () => {
                     <NavUl isShown={isShown} />
                 </div>
                <div className={isShown
-                   ? "fixed top-4 right-2  transition-all ease-linear duration-300 flex gap-8"
+                   ? "fixed top-4 right-2 transition-all ease-linear duration-300 flex gap-8"
                    : "flex fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-8"
                }
                >

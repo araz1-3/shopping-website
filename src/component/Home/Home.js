@@ -43,14 +43,14 @@ const Home = () => {
             return (
        <div className="w-full">
               <div className="lg:bg-fixed bg-scroll bg-cover w-full h-screen bg-backgroundImage">
-                  <div className="w-full  h-screen flex justify-center items-start flex-col bg-[#1110104C] p-[150px] gap-[50px]">
-                      <h1 className="font-bold max-w-2xl md:max-w-xl text-white text-5xl lg:text-6xl">
+                  <div className="w-full h-screen flex justify-center items-start flex-col bg-[#1110104C] p-[150px] gap-y-[50px]">
+                      <h1 className="font-bold md:max-w-xl text-white text-3xl md:text-5xl lg:text-6xl">
                           Raining Offers For Hot Summer!
                       </h1>
-                      <p className=" text-white text-3xl">25% Off On All Products</p>
+                      <p className=" text-white text-2xl lg:text-3xl">25% Off On All Products</p>
                      <div className="flex gap-4">
-                         <Link to="/products" className="bg-white text-center py-2 transition-all text-black w-32 h-10 hover:text-gray-700">SHOP NOW</Link>
-                         <button className="border transition-all w-32 h-10 text-white hover:text-black hover:bg-white">FIND MORE</button>
+                         <Link to="/products" className="bg-white text-center transition-all text-black py-1 px-4 hover:text-gray-700">SHOP NOW</Link>
+                         <button className="border transition-all py-1 px-4 text-white hover:text-black hover:bg-white">FIND MORE</button>
                      </div>
                   </div>
               </div>
