@@ -1,7 +1,5 @@
 import React,{useReducer,createContext} from 'react';
 
-
-
 const initialState ={
     favoriteItems:[],
     favoriteCounter:0,
@@ -11,7 +9,6 @@ const sumFav = items => {
     const  favoriteCounter = items.reduce((total, product) => total + product.quantity, 0)
     return {favoriteCounter}
 }
-
 
 const FavoriteReducer =(state , action)=>{
     console.log(state)
@@ -41,15 +38,11 @@ const FavoriteReducer =(state , action)=>{
     }
 }
 
-
 export const FavoriteContext = createContext()
-
-
 
 const FavoriteContextProvider = ({children}) => {
 
     const [FavState , FavDispatch] = useReducer(FavoriteReducer , initialState)
-
 
     return (
         <FavoriteContext.Provider value={{FavState,FavDispatch}}>
