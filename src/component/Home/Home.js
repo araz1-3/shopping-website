@@ -2,6 +2,8 @@ import React,{useEffect,useState} from 'react';
 
 
 import Logos from "./logos";
+import banner1 from "../../assets/images/men-fashion-free-img.jpg"
+import banner2 from "../../assets/images/women-fashion-free-img.jpg"
 import Banners from "./Banners";
 import Product from "../shared/Product";
 import axios from "axios";
@@ -63,7 +65,10 @@ const Home = () => {
            </button>
 
            <Logos/>
-           <Banners/>
+           <div className="container w-full md:w-4/5  gap-4 flex md:justify-evenly flex-col md:flex-row">
+               <Banners banner={banner1}/>
+               <Banners banner={banner2}/>
+           </div>
 
            <h1 className="text-center my-16 text-5xl">Featured Products</h1>
            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-12 auto-rows-auto container md:8/12 lg:w-7/12 grid-cols-1 auto-cols-max relative">
