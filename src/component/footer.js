@@ -1,48 +1,33 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 
 import img1 from "../assets/images/appstore-img.png"
 import img2 from "../assets/images/playstore-img.png"
+import FooterLinks from "./shared/FooterLinks";
 
 const Footer = () => {
     return (
         <div className="bg-white border-t border-gray-400 border-solid">
             <div className="container">
                 <div className=" flex justify-evenly flex-col md:flex-row items-center py-12">
-                    <div className="flex flex-col gap-5">
-                        <h2 className="text-2xl font-bold mt-5">Quick Links</h2>
-                        <div className="flex flex-col gap-2">
-                            <Link className="hover:text-blue-500" to="/">Home</Link>
-                            <Link className="hover:text-blue-500" to="/products">Products</Link>
-                            <Link className="hover:text-blue-500" to="/cart">Cart</Link>
-                            <Link className="hover:text-blue-500" to="/about">About</Link>
-                            <Link className="hover:text-blue-500" to="/contact">Contact</Link>
-                        </div>
-                    </div>
 
-                    <div className="flex flex-col gap-5">
-                        <h2 className="text-2xl font-bold mt-5">For Her</h2>
-                        <div className="flex flex-col gap-2">
-                            <Link className="hover:text-blue-500" to="/products">Women Jeans</Link>
-                            <Link className="hover:text-blue-500" to="/products">Tops and Shirts</Link>
-                            <Link className="hover:text-blue-500" to="/products">Women Jackets</Link>
-                            <Link className="hover:text-blue-500" to="/products">Heels and Flats</Link>
-                            <Link className="hover:text-blue-500" to="/products">Women Accessories</Link>
-                        </div>
-                    </div>
-                    <div className="flex flex-col gap-5">
-                        <h2 className="text-2xl font-bold mt-5">For Him</h2>
-                        <div className="flex flex-col gap-2">
-                            <Link className="hover:text-blue-500" to="/products">Men Jeans</Link>
-                            <Link className="hover:text-blue-500" to="/products">Men Shoes</Link>
-                            <Link className="hover:text-blue-500" to="/products">Men Shirts</Link>
-                            <Link className="hover:text-blue-500" to="/products">Men Accessories</Link>
-                            <Link className="hover:text-blue-500" to="/products">Men Jackets</Link>
-                        </div>
-                    </div>
+                    <FooterLinks
+                        link1="/" link2="/products" link3="/cart" link4="/about" link5="/contact"
+                        title="Quick Links" text1="Home" text2="Products" text3="Cart" text4="About" text5="Contact"
+                    />
+
+                    <FooterLinks
+                        link1="/products" link2="/products" link3="/products" link4="/products" link5="/products"
+                        title="For Her" text1="Women Jeans" text2="Tops and Shirts" text3="Women Jackets" text4="Heels and Flats" text5="Women Accessories"
+                    />
+
+                    <FooterLinks
+                        link1="/products" link2="/products" link3="/products" link4="/products" link5="/products"
+                        title="For Him" text1="Men Jeans" text2="Men Shoes" text3="Men Shirts" text4="Men Accessories" text5="Men Jackets"
+                    />
+
                     <div className="flex flex-col mt-5 gap-5">
-                        <img src={img1} alt="image"/>
-                        <img src={img2} alt="image"/>
+                        <img src={img1} alt="img"/>
+                        <img src={img2} alt="img"/>
                     </div>
                 </div>
                 <div className="flex justify-around flex-col md:flex-row items-center gap-8 py-6 border-t border-gray-300 border-solid">
