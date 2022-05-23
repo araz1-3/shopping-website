@@ -14,8 +14,8 @@ import Costumers from "../Home/costumers";
 const About = () => {
     return (
         <div>
-            <div className="bg-aboutBanner bg-cover	bg-fixed w-full h-75vh">
-                <div className="bg-lightBlack w-full h-75vh flex items-center justify-center">
+            <div className="bg-aboutBanner lg:bg-fixed bg-scroll bg-cover bg-fixed w-full h-[50vh] md:h-[60vh] lg:h-75vh">
+                <div className="bg-lightBlack w-full h-[50vh] md:h-[60vh] lg:h-75vh flex items-center justify-center">
                     <h1 className="text-center font-bold  text-4xl md:text-6xl text-white">About Us</h1>
                 </div>
             </div>

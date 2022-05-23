@@ -10,11 +10,15 @@ import Loader from "./shared/Loader";
 const Store = () => {
 
     const [search , setSearch] = useState("")
+    const [select , setSelect] = useState("")
 
     const products = useContext(ProductContext)
 
     const changeHandler =(e)=>{
         setSearch(e.target.value)
+    }
+    const selectHandler =(e)=>{
+        setSelect(e.target.value)
     }
 
     let searchFilter = products.filter(item =>item.title.toLowerCase().includes(search.toLowerCase()))
@@ -26,7 +30,10 @@ const Store = () => {
                <div className="w-2/5 h-12 ">
                    <input className="w-full border border-solid focus:bg-white border-gray-500 bg-gray-100 h-full rounded p-2" type="text" placeholder="Search here..." onChange={changeHandler}/>
                </div>
-                   <button className="w-32 rounded text-xl h-12 bg-blue-600 text-white hover:bg-blue-700">Click</button>
+                   <select onChange={selectHandler}>
+                       <option value="highest">highest</option>
+                       <option value="lowest">lowest</option>
+                   </select>
            </div>
 
 

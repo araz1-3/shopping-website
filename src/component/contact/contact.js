@@ -6,8 +6,8 @@ import Address from "../shared/address";
 const Contact = () => {
     return (
         <div>
-             <div className="bg-contactBanner bg-cover bg-fixed w-full h-75vh">
-                 <div className="bg-lightBlack w-full h-75vh flex items-center justify-center">
+             <div className="bg-contactBanner bg-cover lg:bg-fixed bg-scroll h-[50vh] md:h-[60vh] w-full lg:h-75vh">
+                 <div className="bg-lightBlack w-full h-[50vh] md:h-[60vh] lg:h-75vh flex items-center justify-center">
                      <h1 className="text-center font-bold  text-4xl md:text-6xl text-white">Contact Us</h1>
                  </div>
              </div>

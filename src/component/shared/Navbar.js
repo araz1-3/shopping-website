@@ -57,7 +57,7 @@ const Navbar = () => {
 
                 <div className={
                     isShown
-                        ? "gap-10 flex bg-gray-900 pt-20 fixed top-0 left-0 flex-col  w-[250px] h-screen transition-all ease-linear duration-300 translate-x-0"
+                        ? "gap-10 flex bg-gray-900 pt-20 fixed top-0 left-0 flex-col xs:w-[170px]  w-[250px] h-screen transition-all ease-linear duration-300 translate-x-0"
                         : "flex transition-all ease-linear duration-300 md:translate-x-0 translate-x-[-200%] gap-10"
                 }
                 >

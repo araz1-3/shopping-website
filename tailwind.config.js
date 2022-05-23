@@ -7,6 +7,9 @@ module.exports = {
       center: true,
     },
     extend: {
+      screens:{
+        'xs': {'max': '350px'},
+      },
       backgroundImage: {
         'backgroundImage': "url(assets/images/home-new-bg-free-img.jpg)",
         'Banner1': "url(assets/images/men-fashion-free-img.jpg)",
