@@ -10,6 +10,9 @@ import axios from "axios";
 import Main from "./main";
 import Costumers from "./costumers";
 import {Link} from "react-router-dom";
+import Skeleton from "react-loading-skeleton";
+import 'react-loading-skeleton/dist/skeleton.css'
+
 
 
 const Home = () => {
@@ -76,12 +79,22 @@ const Home = () => {
                    <Link  to="/products">View All</Link>
                </div>
                {
+                   data.length?
                    data.map(item =>(
                        <Product
                            key={item.id}
                            productData={item}
                        />
                    ))
+                       :
+                       <>
+                           <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
+
+                           <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
+
+                           <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
+                       </>
+
                }
            </div>
            <Main/>
