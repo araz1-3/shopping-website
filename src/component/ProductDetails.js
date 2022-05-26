@@ -45,15 +45,18 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex">
-                {
-                    data.filter((item)=> item.category === category && item.id !== product.id).map(product =>
-                        <Product
-                            key={product.id}
-                            productData={product}
-                        />
-                    )
-                }
+            <div className="flex flex-col">
+                <h1 className="font-bold text-2xl">Related products</h1>
+               <div className="flex">
+                   {
+                       data.filter((item)=> item.category === category && item.id !== product.id).map(product =>
+                           <Product
+                               key={product.id}
+                               productData={product}
+                           />
+                       )
+                   }
+               </div>
             </div>
         </div>
     );

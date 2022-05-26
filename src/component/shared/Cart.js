@@ -21,20 +21,21 @@ const Cart = (props) => {
                 <span className="bg-[#FFA500FF] text-white inherit p-1 rounded text-center leading-[25px]">{quantity}</span>
             </div>
             <div>
-                {
-                    quantity >1?
-                        <button
-                            className="w-[30px] hover:bg-[#0b499b] text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in h-[30px] bg-[#1a73e8]
-                             text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
-                            onClick={()=>dispatch({type:"DECREASE",payload:props.data})}
-                        >
-                            -
-                        </button>:
-                        <button className="w-[30px] pl-1 hover:bg-red-700 text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in
+
+                <button className="w-[30px] pl-1 hover:bg-red-700 text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in
                         h-[30px] bg-red-600  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
-                                onClick={()=>dispatch({type:"REMOVE_ITEM", payload:props.data})}><img className="w-[20px]" src={Trash} alt="trash" />
-                        </button>
-                }
+                        onClick={()=>dispatch({type:"REMOVE_ITEM", payload:props.data})}><img className="w-[20px]" src={Trash} alt="trash" />
+                </button>
+                <button
+                    className={quantity > 1
+                        ?"w-[30px] hover:bg-[#0b499b] text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in h-[30px] bg-[#1a73e8] text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
+                        :"w-[30px] text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in h-[30px] bg-gray-200 text-white rounded-[4px] cursor-pointer ml-[5px] "}
+                    onClick={quantity >1?()=>dispatch({type:"DECREASE",payload:props.data}):null}
+                >
+                    -
+                </button>
+
+
                 <button className="w-[30px] h-[30px]  hover:bg-[#0b499b] text-[1.6rem]  text-center font-bold  leading-[30px] transition-all duration-100 ease-in  bg-[#1a73e8]
                 text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
                         onClick={()=>dispatch({type:"INCREASE",payload:props.data})}

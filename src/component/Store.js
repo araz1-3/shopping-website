@@ -10,8 +10,8 @@ import Loader from "./shared/Loader";
 const Store = () => {
     const products = useContext(ProductContext)
     const [search , setSearch] = useState("")
-    const [select , setSelect] = useState("all")
-    const [sort , setSort] = useState("default")
+    const [select , setSelect] = useState("")
+    const [sort , setSort] = useState("")
     const [filter , setFilter] =useState(products)
 
     useEffect(()=>{
@@ -40,8 +40,12 @@ const Store = () => {
                 return (b.price - a.price)
             }else if (e.target.value === "lowest"){
                 return (a.price - b.price)
+            }else if (e.target.value === "a-z" && (b.title.toLowerCase()) > (a.title.toLowerCase())) {
+                return -1
+            }else if (e.target.value === "z-a" && (a.title.toLowerCase()) > (b.title.toLowerCase())) {
+                return -1
             }else {
-                return products
+                return (a.id - b.id)
             }
         })
         setFilter(sorting)
@@ -69,6 +73,8 @@ const Store = () => {
                    <option value="default">default</option>
                    <option value="highest">highest</option>
                    <option value="lowest">lowest</option>
+                   <option value="a-z">Name(A-Z)</option>
+                   <option value="z-a">Name(Z-A)</option>
                </select>
            </div>
 
