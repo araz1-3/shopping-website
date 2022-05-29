@@ -1,7 +1,10 @@
-import React,{useContext,useState,useEffect} from 'react';
+import React,{useContext,useEffect} from 'react';
 
 //context
 import {ProductContext} from "../Context/ProductsContextProvider";
+import {FilterContext} from "../Context/FilterContextProvider";
+
+//components
 import Product from "./shared/Product";
 import Loader from "./shared/Loader";
 
@@ -9,80 +12,83 @@ import Loader from "./shared/Loader";
 
 const Store = () => {
     const products = useContext(ProductContext)
-    const [search , setSearch] = useState("")
-    const [select , setSelect] = useState("")
-    const [sort , setSort] = useState("")
-    const [filter , setFilter] =useState(products)
+    const {state,dispatch}= useContext(FilterContext)
 
     useEffect(()=>{
-        setFilter(products)
-    },[products])
+        dispatch({type:"LOAD_PRODUCTS",payload:products})
+    },[products,dispatch])
 
-    const changeHandler =(e)=>{
-        setSearch(e.target.value)
-    }
+    useEffect(() => {
+        dispatch({ type: "FILTER_PRODUCTS" });
+        dispatch({ type: "SORT_PRODUCTS" });
+    }, [dispatch, state.sort, state.filter]);
 
-    const selectHandler=(e)=>{
-        setSelect(e.target.value)
-        if (e.target.value === "all"){
-            setFilter(products)
-        }else {
-            const updating = products.filter((item)=> item.category === e.target.value)
-            setFilter(updating)
+    console.log(state)
+
+    const handleFilterChange = (e) => {
+        const name = e.target.name;
+        let value =
+            e.target.value ||
+            e.target.textContent
+        if (name === "price") {
+            value = Number(value);
         }
-
-    }
-    const sortHandler =(e)=>{
-        setSort(e.target.value)
-
-        const sorting = filter.sort((a,b)=>{
-            if (e.target.value === "highest"){
-                return (b.price - a.price)
-            }else if (e.target.value === "lowest"){
-                return (a.price - b.price)
-            }else if (e.target.value === "a-z" && (b.title.toLowerCase()) > (a.title.toLowerCase())) {
-                return -1
-            }else if (e.target.value === "z-a" && (a.title.toLowerCase()) > (b.title.toLowerCase())) {
-                return -1
-            }else {
-                return (a.id - b.id)
-            }
-        })
-        setFilter(sorting)
-    }
-
-    let searchFilter = filter.filter(item =>item.title.toLowerCase().includes(search.toLowerCase()))
-    console.log(filter)
+        dispatch({ type: "UPDATE_FILTERS", payload: { name, value } });
+    };
 
     return (
 
        <div className="mt-150px container min-h-[50vh]">
            <div className="flex justify-around items-center">
                <div className="w-2/5 h-12 ">
-                   <input className="w-full border border-solid focus:bg-white border-gray-500 bg-gray-100 h-full rounded p-2" type="text" placeholder="Search here..." onChange={changeHandler}/>
+                   <input
+                       className="w-full border border-solid focus:bg-white border-gray-500 bg-gray-100 h-full rounded p-2"
+                       value={state.filter.text}
+                       type="text"
+                       placeholder="Search here..."
+                       name="text"
+                       onChange={handleFilterChange} />
                </div>
 
-               <select onChange={selectHandler}>
+               <select name="category" onChange={handleFilterChange}>
                    <option value="all">All</option>
-                   <option value="men's clothing">men's clothing</option>
-                   <option value="jewelery">jewelery</option>
-                   <option value="electronics">electronics</option>
-                   <option value="women's clothing">women's clothing</option>
+                   <option value="men's clothing">Men's clothing</option>
+                   <option value="jewelery">Jewelery</option>
+                   <option value="electronics">Electronics</option>
+                   <option value="women's clothing">Women's clothing</option>
                </select>
-               <select onChange={sortHandler}>
-                   <option value="default">default</option>
-                   <option value="highest">highest</option>
-                   <option value="lowest">lowest</option>
-                   <option value="a-z">Name(A-Z)</option>
-                   <option value="z-a">Name(Z-A)</option>
+
+               <select onChange={(e)=>{dispatch({type:"UPDATE_SORT", payload:e.target.value})}}>
+                   <option value="default">Default</option>
+                   <option value="price-highest">highest Price</option>
+                   <option value="price-lowest">lowest Price</option>
+                   <option value="name-a">Name(A-Z)</option>
+                   <option value="name-z">Name(Z-A)</option>
                </select>
+
+             <div className="flex flex-col">
+                 <h3 className="font-bold text-xl">Price</h3>
+                 <span>${state.filter.price}</span>
+                 <input
+                     name="price"
+                     onChange={handleFilterChange}
+                     min={state.filter.minPrice}
+                     max={state.filter.maxPrice + 0.01}
+                     value={state.filter.price}
+                     type="range" />
+             </div>
+               <button
+                   onClick={() => {dispatch({ type: "CLEAR_FILTERS" })}}>
+                   clear filters
+               </button>
+
            </div>
 
            <div className="flex flex-wrap justify-between items-center mt-[50px] px-[150px]">
 
                {
                    products.length?
-                       searchFilter.map(product =>
+                       state.filteredProducts.map(product =>
                        <Product
                            key={product.id}
                            productData={product}

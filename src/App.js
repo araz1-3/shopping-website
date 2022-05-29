@@ -7,6 +7,7 @@ import ProductDetails from "./component/ProductDetails";
 import ProductsContextProvider from "./Context/ProductsContextProvider";
 import CartContextProvider from "./Context/CartContextProvider";
 import FavoriteContextProvider from "./Context/FavoriteContextProvider";
+import FilterContextProvider from "./Context/FilterContextProvider";
 
 //Components
 import Navbar from "./component/shared/Navbar";
@@ -24,19 +25,21 @@ function App() {
     <ProductsContextProvider>
         <CartContextProvider>
             <FavoriteContextProvider>
-            <Navbar/>
-            <Routes>
-                <Route path="/products/:id" element={<ProductDetails/>}/>
-                <Route path="/products" element={<Store/>}/>
-                <Route path="/cart" element={<ShopCart/>}/>
-                <Route path="/favorites" element={<Favorites/>}/>
-                <Route path="/about" element={<About/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-                <Route path="/notfound" element={<NotFound/>}/>
-                <Route path="/*" element={<Navigate to="/notfound"/>}/>
-                <Route path="/" element={<Home/>}/>
-            </Routes>
-            <Footer/>
+                <FilterContextProvider>
+                    <Navbar/>
+                    <Routes>
+                        <Route path="/products/:id" element={<ProductDetails/>}/>
+                        <Route path="/products" element={<Store/>}/>
+                        <Route path="/cart" element={<ShopCart/>}/>
+                        <Route path="/favorites" element={<Favorites/>}/>
+                        <Route path="/about" element={<About/>}/>
+                        <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/notfound" element={<NotFound/>}/>
+                        <Route path="/*" element={<Navigate to="/notfound"/>}/>
+                        <Route path="/" element={<Home/>}/>
+                    </Routes>
+                    <Footer/>
+                </FilterContextProvider>
             </FavoriteContextProvider>
         </CartContextProvider>
     </ProductsContextProvider>
