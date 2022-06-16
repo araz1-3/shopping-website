@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const Banners = ({banner}) => {
     return (
             <div className="relative z-[5]">
-                <img className=" h-75vh bg-no-repeat" src={banner} alt="banner"/>
+                <img className="relative h-75vh bg-no-repeat w-full"  src={banner} alt="banner"/>
               <div className="absolute flex flex-col gap-4 z-10	justify-center pt-16 pl-8 top-0 h-75vh w-full left-0 bg-lightBlack ">
                   <h2 className="text-2xl text-white md:text-3xl">Latest Eyewear For You</h2>
                   <span className="text-white">Lorem ipsum dolor sit amet consec tetur.</span>

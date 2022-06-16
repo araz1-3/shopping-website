@@ -7,6 +7,20 @@ module.exports = {
       center: true,
     },
     extend: {
+      animation: {
+        wiggle: 'wiggle 1s linear infinite',
+        opacities: 'opacities 2s linear',
+      },
+      keyframes: {
+        wiggle: {
+          '0%': { boxShadow: '#374151 0 0 0 0' },
+          '50%': { boxShadow: '#6b7280 0 0 0 13px' },
+        },
+        opacities: {
+          '0%': { opacity: '0' },
+          '75%': { opacity: '1' },
+        }
+      },
       screens:{
         'xs': {'max': '350px'},
       },

@@ -47,15 +47,15 @@ const Home = () => {
 
             return (
        <div className="w-full">
-              <div className="lg:bg-fixed bg-scroll bg-cover w-full h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen bg-backgroundImage">
-                  <div className="w-full h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen flex justify-center items-start flex-col bg-[#1110104C] md:p-[150px] pb-5 pt-[150px] gap-y-[25px] md:gap-y-[50px]">
-                      <h1 className="font-bold md:max-w-xl text-white text-3xl md:text-5xl lg:text-6xl">
+              <div className="lg:bg-fixed bg-scroll bg-cover w-full xs:min-h-[370px] h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen bg-backgroundImage">
+                  <div className="w-full h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen xs:min-h-[370px] flex justify-center items-start flex-col bg-[#1110104C] md:p-[150px] pb-5 pt-[150px] gap-y-[20px] sm:gap-y-[25px] md:gap-y-[50px]">
+                      <h1 className="font-bold md:max-w-xl animate-opacities text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
                           Raining Offers For Hot Summer!
                       </h1>
-                      <p className=" text-white text-2xl lg:text-3xl">25% Off On All Products</p>
-                     <div className="flex gap-4">
-                         <Link to="/products" className="bg-white text-center transition-all text-black py-2 w-32 h-10 hover:text-gray-700">SHOP NOW</Link>
-                         <button className="border transition-all py-1 px-4 text-white hover:text-black hover:bg-white">FIND MORE</button>
+                      <p className=" text-white text-xl sm:text-2xl animate-opacities lg:text-3xl">25% Off On All Products</p>
+                     <div className="flex gap-4 flex-col md:flex-row mb-6 md:mb-0">
+                         <Link to="/products" className="bg-white animate-opacities text-center transition-all text-black py-2 md:w-32 w-screen h-10 hover:text-gray-700">SHOP NOW</Link>
+                         <button className="border transition-all animate-opacities py-1 md:w-32 text-white  w-screen hover:text-black hover:bg-white">FIND MORE</button>
                      </div>
                   </div>
               </div>
@@ -73,30 +73,27 @@ const Home = () => {
                <Banners banner={banner2}/>
            </div>
 
-           <h1 className="text-center my-16 text-5xl">Featured Products</h1>
-           <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-12 auto-rows-auto container md:8/12 lg:w-7/12 grid-cols-1 auto-cols-max relative">
-               <div className="font-bold underline hover:text-blue-600 text-xl absolute top-[-50px] md:right-[80px] right-[40px]">
-                   <Link  to="/products">View All</Link>
+           <h1 className="text-center my-16 md:text-5xl font-bold sm:text-3xl text-2xl">Featured Products</h1>
+               <div className="flex flex-wrap xl:w-[1000px] justify-center gap-6 items-center container">
+                   {
+                       data.length?
+                           data.map(item =>(
+                               <Product
+                                   key={item.id}
+                                   productData={item}
+                               />
+                           ))
+                           :
+                           <>
+                               <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
+
+                               <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
+
+                               <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
+                           </>
+
+                   }
                </div>
-               {
-                   data.length?
-                   data.map(item =>(
-                       <Product
-                           key={item.id}
-                           productData={item}
-                       />
-                   ))
-                       :
-                       <>
-                           <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
-
-                           <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
-
-                           <Skeleton highlightColor="#f5f5f5" width={230} height={350} />
-                       </>
-
-               }
-           </div>
            <Main/>
            <Costumers/>
        </div>

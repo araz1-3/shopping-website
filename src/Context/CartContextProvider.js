@@ -1,8 +1,15 @@
 import React, {createContext, useReducer} from 'react';
 
+// let localStorageCart = [];
+// if (localStorage.getItem("cart")) {
+//     localStorageCart = JSON.parse(localStorage.getItem("cart"));
+// }
+
+
+
 const initialState ={
     selectItems : [],
-    itemsCenter : 0,
+    itemsCenter :0,
     total:0,
     checkout:false
 }
@@ -11,7 +18,7 @@ const initialState ={
 const sumItem = items =>{
     const  itemsCenter = items.reduce((total,product)=> total + product.quantity,0)
     let total = items.reduce((total,product)=> total + product.price * product.quantity,0).toFixed(2)
-    return { itemsCenter,total}
+    return {itemsCenter , total}
 }
 
 const cartReducer =(state,action)=>{
@@ -25,6 +32,7 @@ const cartReducer =(state,action)=>{
                     quantity:1
                 })
             }
+            // localStorage.setItem("cart",JSON.stringify(state.selectItems))
             return{
                 ...state,
                 selectItems: [...state.selectItems],
@@ -32,7 +40,8 @@ const cartReducer =(state,action)=>{
                 checkout: false
             }
         case "REMOVE_ITEM":
-            const newSelectItems =state.selectItems.filter(item => item.id !== action.payload.id)
+            const newSelectItems = state.selectItems.filter(item => item.id !== action.payload.id)
+            // localStorage.setItem("cart",JSON.stringify(newSelectItems))
             return {
                 ...state,
                 selectItems: [...newSelectItems],
@@ -41,6 +50,7 @@ const cartReducer =(state,action)=>{
         case "INCREASE":
             const IndexI = state.selectItems.findIndex(item => item.id === action.payload.id)
             state.selectItems[IndexI].quantity++
+            // localStorage.setItem("cart",JSON.stringify(state.selectItems))
             return {
                 ...state,
                 ...sumItem(state.selectItems)
@@ -48,11 +58,13 @@ const cartReducer =(state,action)=>{
         case "DECREASE":
             const IndexD = state.selectItems.findIndex(item => item.id === action.payload.id)
             state.selectItems[IndexD].quantity--
+            // localStorage.setItem("cart",JSON.stringify(state.selectItems))
             return {
                 ...state,
                 ...sumItem(state.selectItems)
             }
         case "CHECKOUT":
+            // localStorage.setItem("cart",JSON.stringify([]))
             return {
                 selectItems : [],
                 itemsCenter : 0,
@@ -60,6 +72,7 @@ const cartReducer =(state,action)=>{
                 checkout:true
             }
         case "CLEAR":
+            // localStorage.setItem("cart",JSON.stringify([]))
             return {
                 selectItems : [],
                 itemsCenter : 0,

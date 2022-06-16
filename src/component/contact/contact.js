@@ -15,7 +15,7 @@ const Contact = () => {
                  <div className="flex flex-col gap-10">
                      <div className="flex flex-col gap-4">
 
-                         <h1 className="text-3xl font-bold ">You tell us. We listen.</h1>
+                         <h1 className="text-3xl xs:text-2xl font-bold ">You tell us. We listen.</h1>
 
                          <Address
                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"

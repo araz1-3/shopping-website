@@ -70,8 +70,8 @@ const Navbar = () => {
                     <NavUl isShown={isShown} />
                 </div>
                <div className={isShown
-                   ? "fixed top-4 right-2 transition-all ease-linear duration-300 flex gap-8"
-                   : "flex fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-8"
+                   ? "fixed top-4 right-2 transition-all ease-linear duration-300 flex gap-5"
+                   : "flex fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-5"
                }
                >
                    <NavIcon

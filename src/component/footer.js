@@ -8,7 +8,7 @@ const Footer = () => {
     return (
         <div className="bg-white border-t border-gray-400 border-solid">
             <div className="container">
-                <div className=" flex justify-evenly flex-col md:flex-row items-center py-12">
+                <div className="flex justify-evenly xs:flex-col gap-5 flex-wrap flex-row items-center py-12">
 
                     <FooterLinks
                         link1="/" link2="/products" link3="/cart" link4="/about" link5="/contact"

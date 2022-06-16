@@ -1,8 +1,13 @@
 import React,{useReducer,createContext} from 'react';
 
+let localStorageFavorites = [];
+if (localStorage.getItem("favorites")) {
+    localStorageFavorites = JSON.parse(localStorage.getItem("favorites"));
+}
+
 const initialState ={
-    favoriteItems:[],
-    favoriteCounter:0,
+    favoriteItems:localStorageFavorites,
+    favoriteCounter:localStorageFavorites.length,
 }
 
 const sumFav = items => {
@@ -20,6 +25,7 @@ const FavoriteReducer =(state , action)=>{
                     quantity:1,
                 })
             }
+            localStorage.setItem("favorites",JSON.stringify(state.favoriteItems))
             return{
                 ...state,
                 favoriteItems: [...state.favoriteItems],
@@ -28,6 +34,7 @@ const FavoriteReducer =(state , action)=>{
             }
         case "REMOVE_FAVORITE":
             const newFavoriteItems =state.favoriteItems.filter(item => item.id !== action.payload.id)
+            localStorage.setItem("favorites",JSON.stringify(newFavoriteItems))
             return {
                 ...state,
                 favoriteItems: [...newFavoriteItems],

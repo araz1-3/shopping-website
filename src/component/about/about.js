@@ -22,7 +22,7 @@ const About = () => {
           <div className="container w-10/12  md:h-50vh my-16 bg-white">
               <div className="flex w-full flex-col gap-5 md:flex-row justify-between ">
                   <div className="md:w-1/2">
-                      <h1 className="my-9 font-bold mx-10 md:mt-16 lg:mt-24 text-left lg:text-5xl md:text-4xl text-3xl ">Who We Are</h1>
+                      <h1 className="my-9 font-bold mx-10 md:mt-16 lg:mt-24 text-left lg:text-5xl md:text-4xl sm:text-3xl text-2xl ">Who We Are</h1>
                       <p className="text-justify px-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis
                           , pulvinar dapibus leo.Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
                   </div>
@@ -34,9 +34,9 @@ const About = () => {
             <div className="bg-white py-32">
                 <div className="flex flex-col gap-8 items-center">
                     <p className="text-center text-2xl font-bold">A Few Words About</p>
-                    <h1 className="text-center text-5xl font-bold">Our Team</h1>
+                    <h1 className="text-center md:text-5xl sm:text-4xl text-3xl font-bold">Our Team</h1>
                     <span className="text-center w-1/2">Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra.</span>
-                    <div className="grid md:grid-cols-3 w-3/4 justify-evenly gap-8 items-center container ">
+                    <div className="flex flex-wrap xl:w-[1000px] justify-center gap-4 items-center container">
                         <Team image={img2} name="Harvey Spector" work="Founder - CEO"/>
                         <Team image={img1} name="Jessica Pearson" work="COO"/>
                         <Team image={img3} name="Rachel Zain" work="Marketing Head"/>

@@ -19,7 +19,6 @@ const filterReducer=(state , action)=>{
         case "LOAD_PRODUCTS":
             let maxPrice = action.payload.map((item) => item.price);
             maxPrice = Math.max(...maxPrice);
-
             return {
                 ...state,
                 filteredProducts: [...action.payload],
