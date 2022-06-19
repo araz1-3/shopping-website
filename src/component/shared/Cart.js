@@ -20,8 +20,8 @@ const Cart = (props) => {
             <div className="flex flex-wrap items-center">
                 <button
                     className={quantity > 1
-                        ?"w-[30px] hover:bg-[#0b499b] text-[1.6rem] font-bold pl-[5px] leading-[30px] transition-all duration-100 ease-in h-[30px] bg-[#1a73e8] text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
-                        :"w-[30px] text-[1.6rem] font-bold leading-[30px] pl-[5px] transition-all duration-100 ease-in h-[30px] bg-gray-200 text-white rounded-[4px] cursor-pointer ml-[5px] "}
+                        ?"w-[30px] hover:bg-[#0b499b] text-[1.6rem] font-bold pl-[5px] leading-[30px] transition-colors ease-in duration-100 h-[30px] bg-[#1a73e8] text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
+                        :"w-[30px] text-[1.6rem] font-bold leading-[30px] pl-[5px] transition-colors ease-in duration-100 h-[30px] bg-gray-200 text-white rounded-[4px] cursor-pointer ml-[5px] "}
                     onClick={quantity >1?()=>dispatch({type:"DECREASE",payload:props.data}):null}
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" className=" h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -31,7 +31,7 @@ const Cart = (props) => {
 
                 <span className="bg-[#FFA500FF] text-white inherit px-1 py-.5 ml-1  rounded text-center leading-[25px]">{quantity}</span>
 
-                <button className="w-[30px] h-[30px] pl-[5px] hover:bg-[#0b499b] text-[1.6rem]  text-center font-bold  leading-[30px] transition-all duration-100 ease-in  bg-[#1a73e8]
+                <button className="w-[30px] h-[30px] pl-[5px] hover:bg-[#0b499b] text-[1.6rem]  text-center font-bold  leading-[30px] transition-colors ease-in duration-100 bg-[#1a73e8]
                 text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"
                         onClick={()=>dispatch({type:"INCREASE",payload:props.data})}
                 >

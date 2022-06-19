@@ -8,7 +8,7 @@ const NavUl = ({isShown}) => {
                 className={
                     isShown
                         ? "flex  flex-col transition-all duration-300 ease-linear items-center pt-8 gap-8"
-                        : "flex transition-all pt-1 duration-300 ease-linear items-center gap-8"
+                        : "flex transition-all pt-1 flex-col md:flex-row duration-300 ease-linear items-center gap-8"
                 }
             >
                 <NavList name="Home" path='/'/>

@@ -34,21 +34,21 @@ const Product = ({productData}) => {
             <div className="flex justify-between items-center mt-[35px] mb-[20px] mx-[20px] h-[40px]">
                 <Link className="text-[#1a73e8] text-[0.95rem]" to={`/products/${productData.id}`}>Details</Link>
                 <div>
-                    {quantityCount(state,productData.id) > 1 && <button className="w-[30px] pl-[5px] hover:bg-[#0b499b] text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow" onClick={()=>dispatch({type:"DECREASE",payload:productData})}>
+                    {quantityCount(state,productData.id) > 1 && <button className="w-[30px] pl-[5px] hover:bg-[#0b499b] text-[1.6rem] font-bold leading-[30px] transition-colors ease-in duration-100 h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow" onClick={()=>dispatch({type:"DECREASE",payload:productData})}>
                         <svg xmlns="http://www.w3.org/2000/svg" className=" h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                             <path fillRule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clipRule="evenodd" />
                         </svg>
                     </button>}
-                    {quantityCount(state,productData.id) === 1 && <button className="w-[30px] pl-[5px] hover:bg-red-700 text-[1.6rem] font-bold leading-[30px] transition-all duration-100 ease-in h-[30px] bg-red-600  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"   onClick={()=>dispatch({type:"REMOVE_ITEM",payload:productData})}><img alt="trash" src={Trash} className="w-[20px] text-center"/></button>}
+                    {quantityCount(state,productData.id) === 1 && <button className="w-[30px] pl-[5px] hover:bg-red-700 text-[1.6rem] font-bold leading-[30px] transition-colors ease-in duration-100 h-[30px] bg-red-600  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"   onClick={()=>dispatch({type:"REMOVE_ITEM",payload:productData})}><img alt="trash" src={Trash} className="w-[20px] text-center"/></button>}
                     {quantityCount(state,productData.id) > 0 && <span className="inline-block pt-2 w-[20px] font-bold ml-[5px] text-[1.2rem] text-[#1a73e8]">{quantityCount(state,productData.id)}</span>}
                     {
                         isInCart(state,productData.id)
-                            ? <button className="w-[30px] text-[1.6rem] hover:bg-[#0b499b] pl-[5px] font-bold leading-[30px] transition-all duration-100 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"  onClick={()=>dispatch({type:"INCREASE",payload:productData})}>
+                            ? <button className="w-[30px] text-[1.6rem] hover:bg-[#0b499b] pl-[5px] font-bold transition-colors ease-in duration-100 h-[30px] bg-[#1a73e8] text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow"  onClick={()=>dispatch({type:"INCREASE",payload:productData})}>
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                     <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
                                 </svg>
                             </button>
-                            : <button className="w-[120px] text-[0.9rem] hover:bg-[#0b499b] transition-all duration-100 ease-in h-[30px] bg-[#1a73e8]  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow" onClick={()=>dispatch({type:"ADD_ITEM",payload:productData})}>Add to Cart</button>
+                            : <button className="w-[120px] text-[0.9rem] hover:bg-[#0b499b] h-[30px] bg-[#1a73e8] transition-colors ease-in duration-100  text-white rounded-[4px] cursor-pointer ml-[5px] shadow-newShadow" onClick={()=>dispatch({type:"ADD_ITEM",payload:productData})}>Add to Cart</button>
                     }
                 </div>
             </div>

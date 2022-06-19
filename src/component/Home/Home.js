@@ -46,19 +46,19 @@ const Home = () => {
     })
 
             return (
-       <div className="w-full">
-              <div className="lg:bg-fixed bg-scroll bg-cover w-full xs:min-h-[370px] h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen bg-backgroundImage">
-                  <div className="w-full h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen xs:min-h-[370px] flex justify-center items-start flex-col bg-[#1110104C] md:p-[150px] pb-5 pt-[150px] gap-y-[20px] sm:gap-y-[25px] md:gap-y-[50px]">
-                      <h1 className="font-bold md:max-w-xl animate-opacities text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
-                          Raining Offers For Hot Summer!
-                      </h1>
-                      <p className=" text-white text-xl sm:text-2xl animate-opacities lg:text-3xl">25% Off On All Products</p>
-                     <div className="flex gap-4 flex-col md:flex-row mb-6 md:mb-0">
-                         <Link to="/products" className="bg-white animate-opacities text-center transition-all text-black py-2 md:w-32 w-screen h-10 hover:text-gray-700">SHOP NOW</Link>
-                         <button className="border transition-all animate-opacities py-1 md:w-32 text-white  w-screen hover:text-black hover:bg-white">FIND MORE</button>
-                     </div>
+                <div className="w-full">
+                  <div className="lg:bg-fixed bg-scroll bg-cover w-full xs:min-h-[370px] h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen bg-backgroundImage">
+                      <div className="w-full h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen xs:min-h-[370px] flex justify-center items-start flex-col bg-[#1110104C] md:p-[150px] pb-5 pt-[150px] gap-y-[20px] sm:gap-y-[25px] md:gap-y-[50px]">
+                          <h1 className="font-bold md:max-w-xl animate-opacities text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl">
+                              Raining Offers For Hot Summer!
+                          </h1>
+                          <p className=" text-white text-xl sm:text-2xl animate-opacities lg:text-3xl">25% Off On All Products</p>
+                         <div className="flex gap-4 flex-col md:flex-row mb-6 md:mb-0">
+                             <Link to="/products" className="bg-white animate-opacities text-center transition-all text-black py-2 md:w-32 w-screen h-10 hover:text-gray-700">SHOP NOW</Link>
+                             <button className="border transition-all animate-opacities py-1 md:w-32 text-white  w-screen hover:text-black hover:bg-white">FIND MORE</button>
+                         </div>
+                      </div>
                   </div>
-              </div>
 
            <button onClick={scrollTOHandler} className={scroll
                ? "transition-all hidden md:block duration-200 ease-in fixed z-50 bottom-20 pb-2 right-20 w-20 h-20 text-5xl font-bold text-white rounded-[50%] bg-[#1a73e8] hover:bg-[#0b499b]"

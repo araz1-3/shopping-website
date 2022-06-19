@@ -12,7 +12,7 @@ const Favorites = () => {
         <div className="min-h-[50vh] container">
             {
                 FavState.favoriteItems.length?
-                <div className="mt-150px flex flex-wrap justify-between items-center px-[150px]">
+                <div className="mt-150px flex flex-wrap md:justify-around justify-center items-center">
                     {FavState.favoriteItems.map(item => <Product key={item.id} productData={item} />)}
                 </div>:
                     <div className="mt-150px flex gap-5 flex-col justify-center items-center">
