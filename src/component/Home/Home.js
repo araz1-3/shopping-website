@@ -45,7 +45,7 @@ const Home = () => {
         }
     })
 
-            return (
+    return (
                 <div className="w-full">
                   <div className="lg:bg-fixed bg-scroll bg-cover w-full xs:min-h-[370px] h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen bg-backgroundImage">
                       <div className="w-full h-[50vh] md:h-[70vh] lg:h-[90vh] xl:h-screen xs:min-h-[370px] flex justify-center items-start flex-col bg-[#1110104C] md:p-[150px] pb-5 pt-[150px] gap-y-[20px] sm:gap-y-[25px] md:gap-y-[50px]">

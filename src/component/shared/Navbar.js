@@ -54,11 +54,12 @@ const Navbar = () => {
                     </svg>
                 </div>
 
+                <div className={isShown ? "bg-slate-700 opacity-50 cursor-pointer fixed h-screen top-0 left-0 w-screen duration-500 transition-all z-10" :"fixed  top-0 left-0  duration-500 transition-all -z-10"}  onClick={showHandler}></div>
 
                 <div className={
                     isShown
-                        ? "gap-10 flex bg-gray-900 pt-20 fixed top-0 left-0 flex-col xs:w-[170px]  w-[250px] h-screen transition-transform ease-linear duration-300 translate-x-0"
-                        : "flex transition-all pt-20 md:pt-0 md:bg-transparent ease-linear md:static fixed top-0 left-0 xs:w-[170px] w-[250px] h-screen md:h-0 duration-300 md:translate-x-0 translate-x-[-200%] gap-10"
+                        ? "gap-10 flex bg-gray-900 pt-20 z-20 fixed top-0 left-0 flex-col xs:w-[170px]  w-[250px] h-screen transition-transform ease-linear duration-300 translate-x-0"
+                        : "flex transition-all pt-20 md:pt-0 z-20 md:bg-transparent ease-linear md:static fixed top-0 left-0 xs:w-[170px] w-[250px] h-screen md:h-0 duration-300 md:translate-x-0 translate-x-[-200%] gap-10"
                 }
                 >
                     <div className={isShown?"absolute top-3 right-5 transition-all ease-linear duration-300 cursor-pointer":"hidden"} onClick={showHandler}>
@@ -70,8 +71,8 @@ const Navbar = () => {
                     <NavUl isShown={isShown} />
                 </div>
                <div className={isShown
-                   ? "fixed top-4 right-2 transition-all ease-linear duration-300 flex gap-5"
-                   : "flex fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-5"
+                   ? "fixed z-20 top-4 right-2 transition-all ease-linear duration-300 flex gap-5"
+                   : "flex z-20 fixed top-4 right-2 md:static transition-all ease-linear duration-300 gap-5"
                }
                >
                    <NavIcon
