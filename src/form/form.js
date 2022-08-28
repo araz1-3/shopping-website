@@ -59,8 +59,8 @@ const Form = () => {
 
     return (
         <div className="md:w-6/12">
-            <form className="bg-white shadow-2xl flex flex-col w-full md:px-10  h-[700px] px-12  gap-[15px]" onSubmit={submitHandler}>
-                <h1 className="mt-9 text-xl md:text-2xl lg:text-3xl  font-bold">Have any Queries? We're here to help.</h1>
+            <form className="bg-white shadow-2xl flex flex-col w-full md:px-10  h-[700px] px-12 xs:px-1  gap-[15px]" onSubmit={submitHandler}>
+                <h1 className="mt-9 text-xl md:text-2xl lg:text-3xl font-bold">Have any Queries? We're here to help.</h1>
 
                 <Input name="name" data={data.name}
                        changeHandler={changeHandler}

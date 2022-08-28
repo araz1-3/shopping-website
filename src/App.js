@@ -18,6 +18,7 @@ import About from "./component/about/about";
 import Contact from "./component/contact/contact";
 import Favorites from "./component/favorites";
 import NotFound from "./component/notFound";
+import ScrollToTop from './component/shared/ScrollToTop';
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <CartContextProvider>
             <FavoriteContextProvider>
                 <FilterContextProvider>
+                    <ScrollToTop/>
                     <Navbar/>
                     <Routes>
                         <Route path="/products/:id" element={<ProductDetails/>}/>

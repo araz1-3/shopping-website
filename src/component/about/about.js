@@ -14,8 +14,8 @@ import Costumers from "../Home/costumers";
 const About = () => {
     return (
         <div>
-            <div className="bg-aboutBanner lg:bg-fixed bg-scroll bg-cover bg-fixed w-full h-[50vh] md:h-[60vh] lg:h-75vh">
-                <div className="bg-lightBlack w-full h-[50vh] md:h-[60vh] lg:h-75vh flex items-center justify-center">
+            <div className="bg-aboutBanner lg:bg-fixed bg-scroll bg-cover w-full h-[50vh] md:h-[60vh] lg:h-[75vh]">
+                <div className="bg-lightBlack w-full h-[50vh] md:h-[60vh] lg:h-[75vh] flex items-center justify-center">
                     <h1 className="text-center font-bold  text-4xl md:text-6xl text-white">About Us</h1>
                 </div>
             </div>
@@ -27,7 +27,7 @@ const About = () => {
                           , pulvinar dapibus leo.Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.</p>
                   </div>
                   <div className="md:w-1/2">
-                      <img className="w-full md:h-50vh h-fit" src={banner5} alt="banner"/>
+                      <img className="w-full md:h-[50vh] h-fit" src={banner5} alt="banner"/>
                   </div>
               </div>
           </div>
